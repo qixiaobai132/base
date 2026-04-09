@@ -13,13 +13,34 @@
 # 在 strs 中没有字符串可以通过重新排列来形成 "bat"。
 # 字符串 "nat" 和 "tan" 是字母异位词，因为它们可以重新排列以形成彼此。
 # 字符串 "ate" ，"eat" 和 "tea" 是字母异位词，因为它们可以重新排列以形成彼此。
+from collections import defaultdict
 class Solution(object):
     def groupAnagrams(self, strs):
         """
         :type strs: List[str]
         :rtype: List[List[str]]
         """
-        r = dict()
-        for i in strs:
-            r[sorted(i)]
-            r.ke
+        r = defaultdict(list)
+        
+        for index, i in enumerate(strs):
+            i = ''.join(sorted(i))
+            r[i].append(index)
+        result = []
+        for i in r.values():
+            medium = []
+            for j in i:
+                medium.append(strs[j])
+            result.append(medium)
+        return result
+
+# l = ["eat", "tea", "tan", "ate", "nat", "bat"]
+# l.sort()
+# s = "ccb"
+# sorted(s)
+x = {"a":1, "b":2,  "c":3}
+x["a"] = [4]
+x["a"].append(5)
+
+if __name__ == '__main__':
+    
+     print(x)
