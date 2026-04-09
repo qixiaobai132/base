@@ -5,22 +5,22 @@ Property属性实现方式：作用是把函数名当变量直接使用
 方式2：类属性
 """
 
-# #装饰器方式
-# class Student():
-#     def __init__(self):
-#         self.__age = 20
+#装饰器方式
+class Student():
+    def __init__(self):
+        self.__age = 20
 
-#     @property
-#     def age(self):
-#         return self.__age
+    @property
+    def age(self):
+        return self.__age
     
-#     @age.setter
-#     def age(self, age):
-#         self.__age = age
+    @age.setter
+    def age(self, age):
+        self.__age = age
 
-# if __name__ == '__main__':
-#     s = Student()
-#     print(s.age)
+if __name__ == '__main__':
+    s = Student()
+    print(s.age)
 
 
 """
